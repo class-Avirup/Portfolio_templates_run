@@ -40,18 +40,7 @@ function PortfolioPreview({ data }) {
     return `${monthNames[parseInt(month) - 1]} ${year}`;
   };
 
-  const handleDownloadPDF = useReactToPrint({
-    content: () => contentRef.current,
-    pageStyle: `
-      @page { size: A4; margin: 1cm; }
-      @media print {
-        body { -webkit-print-color-adjust: exact; }
-        .badge { -webkit-print-color-adjust: exact; }
-        a { text-decoration: none !important; color: inherit !important; }
-      }
-    `,
-    documentTitle: `${personalInfo.name}_CV_${new Date().toISOString().slice(0, 10)}`
-  });
+
 
   return (
     <Container className="my-5">
